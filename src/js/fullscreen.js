@@ -1,9 +1,3 @@
-// ==========================================================================
-// Fullscreen wrapper
-// https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#prefixing
-// https://webkit.org/blog/7929/designing-websites-for-iphone-x/
-// ==========================================================================
-
 import browser from './utils/browser';
 import { closest,getElements, hasClass, toggleClass } from './utils/elements';
 import { on, triggerEvent } from './utils/events';

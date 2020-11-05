@@ -1,7 +1,8 @@
-// Type definitions for WassPlayer 3.5
-// Project: https://WassPlayer.io
-// Definitions by: ondratra <https://github.com/ondratra>
-// TypeScript Version: 3.0
+// ==========================================================================
+// WassPlayer
+// WassPlayer.js v1.0.0
+// License: The MIT License (MIT)
+// ==========================================================================
 
 export = WassPlayer;
 export as namespace WassPlayer;

@@ -1,6 +1,5 @@
 // ==========================================================================
 // Fetch wrapper
-// Using XHR to avoid issues with older browsers
 // ==========================================================================
 
 export default function fetch(url, responseType = 'text') {

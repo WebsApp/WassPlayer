@@ -1,7 +1,6 @@
 // ==========================================================================
-// WassPlayer Polyfilled Build
-// WassPlayer.js v3.6.2
-// https://github.com/sampotts/WassPlayer
+// WassPlayer
+// WassPlayer.js v1.0.0
 // License: The MIT License (MIT)
 // ==========================================================================
 

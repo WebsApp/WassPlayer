@@ -5,8 +5,6 @@
 import is from './is';
 
 // Check for passive event listener support
-// https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
-// https://www.youtube.com/watch?v=NPM6172J22g
 const supportsPassiveListeners = (() => {
   // Test via a getter in the options object to see if the passive property is accessed
   let supported = false;
@@ -90,7 +88,7 @@ export function triggerEvent(element, type = '', bubbles = false, detail = {}) {
   // Create and dispatch the event
   const event = new CustomEvent(type, {
     bubbles,
-    detail: { ...detail, plyr: this },
+    detail: { ...detail, wassPlayer: this },
   });
 
   // Dispatch the event

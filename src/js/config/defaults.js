@@ -101,8 +101,6 @@ const defaults = {
   captions: {
     active: false,
     language: 'auto',
-    // Listen to new tracks added after Plyr is initialized.
-    // This is needed for streaming captions, but may result in unselectable options
     update: false,
   },
 
@@ -111,8 +109,6 @@ const defaults = {
     enabled: true, // Allow fullscreen?
     fallback: true, // Fallback using full viewport/window
     iosNative: false, // Use the native fullscreen in iOS (disables custom controls)
-    // Selector for the fullscreen container so contextual / non-player content can remain visible in fullscreen mode
-    // Non-ancestors of the player element will be ignored
     // container: null, // defaults to the player element
   },
 
@@ -213,8 +209,6 @@ const defaults = {
 
   // Events to watch and bubble
   events: [
-    // Events to watch on HTML5 media elements and bubble
-    // https://developer.mozilla.org/en/docs/Web/Guide/Events/Media_events
     'ended',
     'progress',
     'stalled',

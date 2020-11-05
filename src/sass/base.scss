@@ -1,0 +1,69 @@
+// --------------------------------------------------------------
+// Base styling
+// --------------------------------------------------------------
+
+// Base
+.wassPlayer {
+  @include wass-player-font-smoothing($wass-player-font-smoothing);
+  align-items: center;
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  font-family: $wass-player-font-family;
+  font-variant-numeric: tabular-nums; // Force monosace-esque number widths
+  font-weight: $wass-player-font-weight-regular;
+  height: 100%;
+  line-height: $wass-player-line-height;
+  max-width: 100%;
+  min-width: 200px;
+  position: relative;
+  text-shadow: none;
+  transition: box-shadow 0.3s ease;
+  z-index: 0; // Force any border radius
+
+  // Media elements
+  video,
+  audio,
+  iframe {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  button {
+    font: inherit;
+    line-height: inherit;
+    width: auto;
+  }
+
+  // Ignore focus
+  &:focus {
+    outline: 0;
+  }
+}
+
+// border-box everything
+// http://paulirish.com/2012/box-sizing-border-box-ftw/
+@if $wass-player-border-box {
+  .wassPlayer--full-ui {
+    box-sizing: border-box;
+
+    *,
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+  }
+}
+
+// Fix 300ms delay
+@if $wass-player-touch-action {
+  .wassPlayer--full-ui {
+    a,
+    button,
+    input,
+    label {
+      touch-action: manipulation;
+    }
+  }
+}

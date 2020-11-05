@@ -1,0 +1,20 @@
+// --------------------------------------------------------------
+// Time
+// --------------------------------------------------------------
+
+.wassPlayer__time {
+  font-size: $wass-player-font-size-time;
+}
+
+// Media duration hidden on small screens
+.wassPlayer__time + .wassPlayer__time {
+  // Add a slash in before
+  &::before {
+    content: '\2044';
+    margin-right: $wass-player-control-spacing;
+  }
+
+  @media (max-width: calc(#{$wass-player-bp-md} - 1)) {
+    display: none;
+  }
+}

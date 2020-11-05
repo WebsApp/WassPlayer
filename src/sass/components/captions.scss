@@ -1,0 +1,58 @@
+// --------------------------------------------------------------
+// Captions
+// --------------------------------------------------------------
+
+// Hide default captions
+.wassPlayer--full-ui ::-webkit-media-text-track-container {
+  display: none;
+}
+
+.wassPlayer__captions {
+  animation: wassPlayer-fade-in 0.3s ease;
+  bottom: 0;
+  display: none;
+  font-size: $wass-player-font-size-captions-small;
+  left: 0;
+  padding: $wass-player-control-spacing;
+  position: absolute;
+  text-align: center;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+
+  span:empty {
+    display: none;
+  }
+
+  @media (min-width: $wass-player-bp-sm) {
+    font-size: $wass-player-font-size-captions-base;
+    padding: calc(#{$wass-player-control-spacing} * 2);
+  }
+
+  @media (min-width: $wass-player-bp-md) {
+    font-size: $wass-player-font-size-captions-medium;
+  }
+}
+
+.wassPlayer--captions-active .wassPlayer__captions {
+  display: block;
+}
+
+// If the lower controls are shown and not empty
+.wassPlayer:not(.wassPlayer--hide-controls) .wassPlayer__controls:not(:empty) ~ .wassPlayer__captions {
+  transform: translateY(calc(#{$wass-player-control-spacing} * -4));
+}
+
+.wassPlayer__caption {
+  background: $wass-player-captions-background;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  color: $wass-player-captions-text-color;
+  line-height: 185%;
+  padding: 0.2em 0.5em;
+  white-space: pre-wrap;
+
+  // Firefox adds a <div> when using getCueAsHTML()
+  div {
+    display: inline;
+  }
+}

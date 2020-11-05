@@ -1,0 +1,20 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+$wass-player-font-family: var(--wass-player-font-family, inherit) !default;
+$wass-player-font-size-base: var(--wass-player-font-size-base, 15px) !default;
+$wass-player-font-size-small: var(--wass-player-font-size-small, 13px) !default;
+$wass-player-font-size-large: var(--wass-player-font-size-large, 18px) !default;
+$wass-player-font-size-xlarge: var(--wass-player-font-size-xlarge, 21px) !default;
+
+$wass-player-font-size-time: var(--wass-player-font-size-time, $wass-player-font-size-small) !default;
+$wass-player-font-size-menu: var(--wass-player-font-size-menu, $wass-player-font-size-small) !default;
+$wass-player-font-size-badge: var(--wass-player-font-size-badge, 9px) !default;
+
+$wass-player-font-weight-regular: var(--wass-player-font-weight-regular, 400) !default;
+$wass-player-font-weight-bold: var(--wass-player-font-weight-bold, 600) !default;
+
+$wass-player-line-height: var(--wass-player-line-height, 1.7) !default;
+
+$wass-player-font-smoothing: var(--wass-player-font-smoothing, false) !default;

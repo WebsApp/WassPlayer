@@ -1,0 +1,9 @@
+// ==========================================================================
+// Breakpoints
+// NOTE: we can't use CSS variables for breakpoints unfortunately
+// https://www.w3.org/TR/css-variables-1/#using-variables
+// ==========================================================================
+
+$wass-player-bp-sm: 480px !default;
+$wass-player-bp-md: 768px !default;
+$wass-player-bp-lg: 1024px !default;

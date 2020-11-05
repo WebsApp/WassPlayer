@@ -1,0 +1,11 @@
+// ==========================================================================
+// Tooltips
+// ==========================================================================
+
+$wass-player-tooltip-background: var(--wass-player-tooltip-background, rgba(#fff, 0.9)) !default;
+$wass-player-tooltip-color: var(--wass-player-tooltip-color, $wass-player-color-gray-700) !default;
+$wass-player-tooltip-padding: calc(#{$wass-player-control-spacing} / 2);
+$wass-player-tooltip-padding: var(--wass-player-tooltip-padding, $wass-player-tooltip-padding) !default;
+$wass-player-tooltip-arrow-size: var(--wass-player-tooltip-arrow-size, 4px) !default;
+$wass-player-tooltip-radius: var(--wass-player-tooltip-radius, 3px) !default;
+$wass-player-tooltip-shadow: var(--wass-player-tooltip-shadow, 0 1px 2px rgba(0, 0, 0, 0.15)) !default;

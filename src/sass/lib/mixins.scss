@@ -1,0 +1,87 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// Nicer focus styles
+// ---------------------------------------
+@mixin wass-player-tab-focus($color: $wass-player-tab-focus-color) {
+  outline-color: $color;
+  outline-offset: 2px;
+  outline-style: dotted;
+  outline-width: 3px;
+}
+
+// Font smoothing
+// ---------------------------------------
+@mixin wass-player-font-smoothing($mode: true) {
+  @if $mode {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+// <input type="range"> styling
+// ---------------------------------------
+@mixin wass-player-range-track() {
+  background: transparent;
+  border: 0;
+  border-radius: calc(#{$wass-player-range-track-height} / 2);
+  height: $wass-player-range-track-height;
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+}
+
+@mixin wass-player-range-thumb() {
+  background: $wass-player-range-thumb-background;
+  border: 0;
+  border-radius: 100%;
+  box-shadow: $wass-player-range-thumb-shadow;
+  height: $wass-player-range-thumb-height;
+  position: relative;
+  transition: all 0.2s ease;
+  width: $wass-player-range-thumb-height;
+}
+
+@mixin wass-player-range-thumb-active($color) {
+  box-shadow: $wass-player-range-thumb-shadow, 0 0 0 $wass-player-range-thumb-active-shadow-width $color;
+}
+
+// Fullscreen styles
+// ---------------------------------------
+@mixin wass-player-fullscreen-active() {
+  background: #000;
+  border-radius: 0 !important;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+
+  video {
+    height: 100%;
+  }
+
+  .wassPlayer__video-wrapper {
+    height: 100%;
+    position: static;
+  }
+
+  // Display correct icon
+  .wassPlayer__control .icon--exit-fullscreen {
+    display: block;
+
+    + svg {
+      display: none;
+    }
+  }
+
+  // Hide cursor in fullscreen when controls hidden
+  &.wassPlayer--hide-controls {
+    cursor: none;
+  }
+
+  // Large captions in full screen on larger screens
+  @media (min-width: $wass-player-bp-lg) {
+    .wassPlayer__captions {
+      font-size: $wass-player-font-size-captions-large;
+    }
+  }
+}

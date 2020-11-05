@@ -1,0 +1,14 @@
+// ==========================================================================
+// Progress
+// ==========================================================================
+
+// Loading
+$wass-player-progress-loading-size: var(--wass-player-progress-loading-size, 25px) !default;
+$wass-player-progress-loading-background: var(--wass-player-progress-loading-background, rgba($wass-player-color-gray-900, 0.6)) !default;
+
+// Buffered
+$wass-player-video-progress-buffered-background: var(--wass-player-video-progress-buffered-background, rgba(#fff, 0.25)) !default;
+$wass-player-audio-progress-buffered-background: var(
+  --wass-player-audio-progress-buffered-background,
+  rgba($wass-player-color-gray-200, 0.6)
+) !default;

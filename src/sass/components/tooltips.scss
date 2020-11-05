@@ -1,0 +1,88 @@
+// --------------------------------------------------------------
+// Tooltips
+// --------------------------------------------------------------
+
+.wassPlayer__tooltip {
+  background: $wass-player-tooltip-background;
+  border-radius: $wass-player-tooltip-radius;
+  bottom: 100%;
+  box-shadow: $wass-player-tooltip-shadow;
+  color: $wass-player-tooltip-color;
+  font-size: $wass-player-font-size-small;
+  font-weight: $wass-player-font-weight-regular;
+  left: 50%;
+  line-height: 1.3;
+  margin-bottom: calc(#{$wass-player-tooltip-padding} * 2);
+  opacity: 0;
+  padding: $wass-player-tooltip-padding calc(#{$wass-player-tooltip-padding} * 1.5);
+  pointer-events: none;
+  position: absolute;
+  transform: translate(-50%, 10px) scale(0.8);
+  transform-origin: 50% 100%;
+  transition: transform 0.2s 0.1s ease, opacity 0.2s 0.1s ease;
+  white-space: nowrap;
+  z-index: 2;
+
+  // The background triangle
+  &::before {
+    border-left: $wass-player-tooltip-arrow-size solid transparent;
+    border-right: $wass-player-tooltip-arrow-size solid transparent;
+    border-top: $wass-player-tooltip-arrow-size solid $wass-player-tooltip-background;
+    bottom: calc(#{$wass-player-tooltip-arrow-size} * -1);
+    content: '';
+    height: 0;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 0;
+    z-index: 2;
+  }
+}
+
+// Displaying
+.wassPlayer .wassPlayer__control:hover .wassPlayer__tooltip,
+.wassPlayer .wassPlayer__control.wassPlayer__tab-focus .wassPlayer__tooltip,
+.wassPlayer__tooltip--visible {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.wassPlayer .wassPlayer__control:hover .wassPlayer__tooltip {
+  z-index: 3;
+}
+
+// First tooltip
+.wassPlayer__controls > .wassPlayer__control:first-child .wassPlayer__tooltip,
+.wassPlayer__controls > .wassPlayer__control:first-child + .wassPlayer__control .wassPlayer__tooltip {
+  left: 0;
+  transform: translate(0, 10px) scale(0.8);
+  transform-origin: 0 100%;
+
+  &::before {
+    left: calc((#{$wass-player-control-icon-size} / 2) + #{$wass-player-control-padding});
+  }
+}
+
+// Last tooltip
+.wassPlayer__controls > .wassPlayer__control:last-child .wassPlayer__tooltip {
+  left: auto;
+  right: 0;
+  transform: translate(0, 10px) scale(0.8);
+  transform-origin: 100% 100%;
+
+  &::before {
+    left: auto;
+    right: calc((#{$wass-player-control-icon-size} / 2) + #{$wass-player-control-padding});
+    transform: translateX(50%);
+  }
+}
+
+.wassPlayer__controls > .wassPlayer__control:first-child,
+.wassPlayer__controls > .wassPlayer__control:first-child + .wassPlayer__control,
+.wassPlayer__controls > .wassPlayer__control:last-child {
+  &:hover .wassPlayer__tooltip,
+  &.wassPlayer__tab-focus .wassPlayer__tooltip,
+  .wassPlayer__tooltip--visible {
+    transform: translate(0, 0) scale(1);
+  }
+}

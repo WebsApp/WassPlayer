@@ -1,0 +1,202 @@
+// --------------------------------------------------------------
+// Menus
+// --------------------------------------------------------------
+
+.wassPlayer__menu {
+  display: flex; // Edge fix
+  position: relative;
+
+  // Animate the icon
+  .wassPlayer__control svg {
+    transition: transform 0.3s ease;
+  }
+  .wassPlayer__control[aria-expanded='true'] {
+    svg {
+      transform: rotate(90deg);
+    }
+
+    // Hide tooltip
+    .wassPlayer__tooltip {
+      display: none;
+    }
+  }
+
+  // The actual menu container
+  &__container {
+    animation: wassPlayer-popup 0.2s ease;
+    background: $wass-player-menu-background;
+    border-radius: 4px;
+    bottom: 100%;
+    box-shadow: $wass-player-menu-shadow;
+    color: $wass-player-menu-color;
+    font-size: $wass-player-font-size-base;
+    margin-bottom: 10px;
+    position: absolute;
+    right: -3px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 3;
+
+    > div {
+      overflow: hidden;
+      transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    // Arrow
+    &::after {
+      border: $wass-player-menu-arrow-size solid transparent;
+      border-top-color: $wass-player-menu-background;
+      content: '';
+      height: 0;
+      position: absolute;
+      right: calc(((#{$wass-player-control-icon-size} / 2) + #{$wass-player-control-padding}) - (#{$wass-player-menu-arrow-size} / 2));
+      top: 100%;
+      width: 0;
+    }
+
+    [role='menu'] {
+      padding: $wass-player-control-padding;
+    }
+
+    [role='menuitem'],
+    [role='menuitemradio'] {
+      margin-top: 2px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    // Options
+    .wassPlayer__control {
+      align-items: center;
+      color: $wass-player-menu-color;
+      display: flex;
+      font-size: $wass-player-font-size-menu;
+      padding-bottom: calc(#{$wass-player-control-padding} / 1.5);
+      padding-left: calc(#{$wass-player-control-padding} * 1.5);
+      padding-right: calc(#{$wass-player-control-padding} * 1.5);
+      padding-top: calc(#{$wass-player-control-padding} / 1.5);
+      user-select: none;
+      width: 100%;
+
+      > span {
+        align-items: inherit;
+        display: flex;
+        width: 100%;
+      }
+
+      &::after {
+        border: $wass-player-menu-item-arrow-size solid transparent;
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &--forward {
+        padding-right: calc(#{$wass-player-control-padding} * 4);
+
+        &::after {
+          border-left-color: $wass-player-menu-item-arrow-color;
+          right: calc((#{$wass-player-control-padding} * 1.5) - #{$wass-player-menu-item-arrow-size});
+        }
+
+        &.wassPlayer__tab-focus::after,
+        &:hover::after {
+          border-left-color: currentColor;
+        }
+      }
+
+      &--back {
+        font-weight: $wass-player-font-weight-regular;
+        margin: $wass-player-control-padding;
+        margin-bottom: calc(#{$wass-player-control-padding} / 2);
+        padding-left: calc(#{$wass-player-control-padding} * 4);
+        position: relative;
+        width: calc(100% - (#{$wass-player-control-padding} * 2));
+
+        &::after {
+          border-right-color: $wass-player-menu-item-arrow-color;
+          left: calc((#{$wass-player-control-padding} * 1.5) - #{$wass-player-menu-item-arrow-size});
+        }
+
+        &::before {
+          background: $wass-player-menu-back-border-color;
+          box-shadow: 0 1px 0 $wass-player-menu-back-border-shadow-color;
+          content: '';
+          height: 1px;
+          left: 0;
+          margin-top: calc(#{$wass-player-control-padding} / 2);
+          overflow: hidden;
+          position: absolute;
+          right: 0;
+          top: 100%;
+        }
+
+        &.wassPlayer__tab-focus::after,
+        &:hover::after {
+          border-right-color: currentColor;
+        }
+      }
+    }
+
+    .wassPlayer__control[role='menuitemradio'] {
+      padding-left: $wass-player-control-padding;
+
+      &::before,
+      &::after {
+        border-radius: 100%;
+      }
+
+      &::before {
+        background: rgba(#000, 0.1);
+        content: '';
+        display: block;
+        flex-shrink: 0;
+        height: 16px;
+        margin-right: $wass-player-control-spacing;
+        transition: all 0.3s ease;
+        width: 16px;
+      }
+
+      &::after {
+        background: #fff;
+        border: 0;
+        height: 6px;
+        left: 12px;
+        opacity: 0;
+        top: 50%;
+        transform: translateY(-50%) scale(0);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        width: 6px;
+      }
+
+      &[aria-checked='true'] {
+        &::before {
+          background: $wass-player-control-toggle-checked-background;
+        }
+        &::after {
+          opacity: 1;
+          transform: translateY(-50%) scale(1);
+        }
+      }
+
+      &.wassPlayer__tab-focus::before,
+      &:hover::before {
+        background: rgba($wass-player-color-gray-900, 0.1);
+      }
+    }
+
+    // Option value
+    .wassPlayer__menu__value {
+      align-items: center;
+      display: flex;
+      margin-left: auto;
+      margin-right: calc((#{$wass-player-control-padding} - 2) * -1);
+      overflow: hidden;
+      padding-left: calc(#{$wass-player-control-padding} * 3.5);
+      pointer-events: none;
+    }
+  }
+}

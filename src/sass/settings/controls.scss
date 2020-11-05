@@ -1,0 +1,33 @@
+// ==========================================================================
+// Controls
+// ==========================================================================
+
+$wass-player-control-icon-size: var(--wass-player-control-icon-size, 18px) !default;
+$wass-player-control-spacing: var(--wass-player-control-spacing, 10px) !default;
+$wass-player-control-padding: calc(#{$wass-player-control-spacing} * 0.7);
+$wass-player-control-padding: var(--wass-player-control-padding, $wass-player-control-padding) !default;
+$wass-player-control-radius: var(--wass-player-control-radius, 3px) !default;
+
+$wass-player-control-toggle-checked-background: var(
+  --wass-player-control-toggle-checked-background,
+  var(--wass-player-color-main, $wass-player-color-main)
+) !default;
+
+$wass-player-video-controls-background: var(
+  --wass-player-video-controls-background,
+  linear-gradient(rgba(#000, 0), rgba(#000, 0.75))
+) !default;
+$wass-player-video-control-color: var(--wass-player-video-control-color, #fff) !default;
+$wass-player-video-control-color-hover: var(--wass-player-video-control-color-hover, #fff) !default;
+$wass-player-video-control-background-hover: var(
+  --wass-player-video-control-background-hover,
+  var(--wass-player-color-main, $wass-player-color-main)
+) !default;
+
+$wass-player-audio-controls-background: var(--wass-player-audio-controls-background, #fff) !default;
+$wass-player-audio-control-color: var(--wass-player-audio-control-color, $wass-player-color-gray-700) !default;
+$wass-player-audio-control-color-hover: var(--wass-player-audio-control-color-hover, #fff) !default;
+$wass-player-audio-control-background-hover: var(
+  --wass-player-audio-control-background-hover,
+  var(--wass-player-color-main, $wass-player-color-main)
+) !default;

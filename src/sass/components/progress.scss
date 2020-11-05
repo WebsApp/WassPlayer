@@ -1,0 +1,94 @@
+// --------------------------------------------------------------
+// Playback progress
+// --------------------------------------------------------------
+
+// Offset the range thumb in order to be able to calculate the relative progress (#954)
+$wass-player-progress-offset: $wass-player-range-thumb-height;
+
+.wassPlayer__progress {
+  left: calc(#{$wass-player-progress-offset} * 0.5);
+  margin-right: $wass-player-progress-offset;
+  position: relative;
+
+  input[type='range'],
+  &__buffer {
+    margin-left: calc(#{$wass-player-progress-offset} * -0.5);
+    margin-right: calc(#{$wass-player-progress-offset} * -0.5);
+    width: calc(100% + #{$wass-player-progress-offset});
+  }
+
+  input[type='range'] {
+    position: relative;
+    z-index: 2;
+  }
+
+  // Seek tooltip to show time
+  .wassPlayer__tooltip {
+    font-size: $wass-player-font-size-time;
+    left: 0;
+  }
+}
+
+.wassPlayer__progress__buffer {
+  -webkit-appearance: none; /* stylelint-disable-line */
+  background: transparent;
+  border: 0;
+  border-radius: 100px;
+  height: $wass-player-range-track-height;
+  left: 0;
+  margin-top: calc((#{$wass-player-range-track-height} / 2) * -1);
+  padding: 0;
+  position: absolute;
+  top: 50%;
+
+  &::-webkit-progress-bar {
+    background: transparent;
+  }
+
+  &::-webkit-progress-value {
+    background: currentColor;
+    border-radius: 100px;
+    min-width: $wass-player-range-track-height;
+    transition: width 0.2s ease;
+  }
+
+  // Mozilla
+  &::-moz-progress-bar {
+    background: currentColor;
+    border-radius: 100px;
+    min-width: $wass-player-range-track-height;
+    transition: width 0.2s ease;
+  }
+
+  // Microsoft
+  &::-ms-fill {
+    border-radius: 100px;
+    transition: width 0.2s ease;
+  }
+}
+
+// Loading state
+.wassPlayer--loading .wassPlayer__progress__buffer {
+  animation: wassPlayer-progress 1s linear infinite;
+  background-image: linear-gradient(
+    -45deg,
+    $wass-player-progress-loading-background 25%,
+    transparent 25%,
+    transparent 50%,
+    $wass-player-progress-loading-background 50%,
+    $wass-player-progress-loading-background 75%,
+    transparent 75%,
+    transparent
+  );
+  background-repeat: repeat-x;
+  background-size: $wass-player-progress-loading-size $wass-player-progress-loading-size;
+  color: transparent;
+}
+
+.wassPlayer--video.wassPlayer--loading .wassPlayer__progress__buffer {
+  background-color: $wass-player-video-progress-buffered-background;
+}
+
+.wassPlayer--audio.wassPlayer--loading .wassPlayer__progress__buffer {
+  background-color: $wass-player-audio-progress-buffered-background;
+}

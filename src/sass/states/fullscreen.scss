@@ -1,0 +1,34 @@
+// --------------------------------------------------------------
+// Fullscreen
+// --------------------------------------------------------------
+
+.wassPlayer:fullscreen {
+  @include wass-player-fullscreen-active();
+}
+
+/* stylelint-disable-next-line */
+.wassPlayer:-webkit-full-screen {
+  @include wass-player-fullscreen-active();
+}
+
+/* stylelint-disable-next-line */
+.wassPlayer:-moz-full-screen {
+  @include wass-player-fullscreen-active();
+}
+
+/* stylelint-disable-next-line */
+.wassPlayer:-ms-fullscreen {
+  @include wass-player-fullscreen-active();
+}
+
+// Fallback for unsupported browsers
+.wassPlayer--fullscreen-fallback {
+  @include wass-player-fullscreen-active();
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10000000;
+}

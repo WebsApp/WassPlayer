@@ -1,0 +1,12 @@
+// --------------------------------------------------------------
+// Badges
+// --------------------------------------------------------------
+
+.wassPlayer__badge {
+  background: $wass-player-badge-background;
+  border-radius: $wass-player-badge-border-radius;
+  color: $wass-player-badge-text-color;
+  font-size: $wass-player-font-size-badge;
+  line-height: 1;
+  padding: 3px 4px;
+}

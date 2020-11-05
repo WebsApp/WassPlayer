@@ -1,0 +1,29 @@
+{
+    "js": {
+        "wassPlayer.js": {
+            "src": "./src/js/wassPlayer.js",
+            "dist": "./dist/",
+            "formats": ["es", "umd"],
+            "namespace": "WassPlayer"
+        },
+        "wassPlayer.polyfilled.js": {
+            "src": "./src/js/wassPlayer.polyfilled.js",
+            "dist": "./dist/",
+            "formats": ["es", "umd"],
+            "namespace": "WassPlayer",
+            "polyfill": true
+        }
+    },
+    "css": {
+        "wassPlayer.css": {
+            "src": "./src/sass/wassPlayer.scss",
+            "dist": "./dist/"
+        }
+    },
+    "sprite": {
+        "wassPlayer.svg": {
+            "src": "./src/sprite/*.svg",
+            "dist": "./dist"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// --------------------------------------------------------------
+// Control buttons
+// --------------------------------------------------------------
+
+.wassPlayer__control {
+  background: transparent;
+  border: 0;
+  border-radius: $wass-player-control-radius;
+  color: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  overflow: visible; // IE11
+  padding: $wass-player-control-padding;
+  position: relative;
+  transition: all 0.3s ease;
+
+  svg {
+    display: block;
+    fill: currentColor;
+    height: $wass-player-control-icon-size;
+    pointer-events: none;
+    width: $wass-player-control-icon-size;
+  }
+
+  // Default focus
+  &:focus {
+    outline: 0;
+  }
+
+  // Tab focus
+  &.wassPlayer__tab-focus {
+    @include wass-player-tab-focus();
+  }
+}
+
+// Remove any link styling
+a.wassPlayer__control {
+  text-decoration: none;
+
+  &::after,
+  &::before {
+    display: none;
+  }
+}
+
+// Change icons on state change
+.wassPlayer__control:not(.wassPlayer__control--pressed) .icon--pressed,
+.wassPlayer__control.wassPlayer__control--pressed .icon--not-pressed,
+.wassPlayer__control:not(.wassPlayer__control--pressed) .label--pressed,
+.wassPlayer__control.wassPlayer__control--pressed .label--not-pressed {
+  display: none;
+}

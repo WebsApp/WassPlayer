@@ -1,0 +1,40 @@
+// ==========================================================================
+// Sliders
+// ==========================================================================
+
+// Thumb
+$wass-player-range-thumb-height: var(--wass-player-range-thumb-height, 13px) !default;
+$wass-player-range-thumb-background: var(--wass-player-range-thumb-background, #fff) !default;
+$wass-player-range-thumb-shadow: var(
+  --wass-player-range-thumb-shadow,
+  0 1px 1px rgba($wass-player-color-gray-900, 0.15),
+  0 0 0 1px rgba($wass-player-color-gray-900, 0.2)
+) !default;
+
+// Active state
+$wass-player-range-thumb-active-shadow-width: var(--wass-player-range-thumb-active-shadow-width, 3px) !default;
+
+// Track
+$wass-player-range-track-height: var(--wass-player-range-track-height, 5px) !default;
+
+// Fill
+$wass-player-range-fill-background: var(--wass-player-range-fill-background, var(--wass-player-color-main, $wass-player-color-main)) !default;
+
+// Type specific
+$wass-player-video-range-track-background: var(
+  --wass-player-video-range-track-background,
+  $wass-player-video-progress-buffered-background
+) !default;
+$wass-player-video-range-thumb-active-shadow-color: var(
+  --wass-player-audio-range-thumb-active-shadow-color,
+  rgba(#fff, 0.5)
+) !default;
+
+$wass-player-audio-range-track-background: var(
+  --wass-player-audio-range-track-background,
+  $wass-player-audio-progress-buffered-background
+) !default;
+$wass-player-audio-range-thumb-active-shadow-color: var(
+  --wass-player-audio-range-thumb-active-shadow-color,
+  rgba($wass-player-color-gray-900, 0.1)
+) !default;

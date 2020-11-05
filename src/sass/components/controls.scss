@@ -1,0 +1,64 @@
+// --------------------------------------------------------------
+// Controls
+// --------------------------------------------------------------
+
+// Hide native controls
+.wassPlayer--full-ui ::-webkit-media-controls {
+  display: none;
+}
+
+// Playback controls
+.wassPlayer__controls {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+
+  .wassPlayer__progress__container {
+    flex: 1;
+    min-width: 0; // Fix for Edge issue where content would overflow
+  }
+
+  // Spacing
+  .wassPlayer__controls__item {
+    margin-left: calc(#{$wass-player-control-spacing} / 4);
+
+    &:first-child {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    &.wassPlayer__progress__container {
+      padding-left: calc(#{$wass-player-control-spacing} / 4);
+    }
+
+    &.wassPlayer__time {
+      padding: 0 calc(#{$wass-player-control-spacing} / 2);
+    }
+
+    &.wassPlayer__progress__container:first-child,
+    &.wassPlayer__time:first-child,
+    &.wassPlayer__time + .wassPlayer__time {
+      padding-left: 0;
+    }
+  }
+
+  // Hide empty controls
+  &:empty {
+    display: none;
+  }
+}
+
+// Some options are hidden by default
+.wassPlayer [data-wassPlayer='captions'],
+.wassPlayer [data-wassPlayer='pip'],
+.wassPlayer [data-wassPlayer='airplay'],
+.wassPlayer [data-wassPlayer='fullscreen'] {
+  display: none;
+}
+.wassPlayer--captions-enabled [data-wassPlayer='captions'],
+.wassPlayer--pip-supported [data-wassPlayer='pip'],
+.wassPlayer--airplay-supported [data-wassPlayer='airplay'],
+.wassPlayer--fullscreen-enabled [data-wassPlayer='fullscreen'] {
+  display: inline-block;
+}

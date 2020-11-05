@@ -90,9 +90,9 @@ WassPlayer supports the last 2 versions of most _modern_ browsers.
 | Chrome        | ✓               |
 | Edge          | ✓               |
 | Firefox       | ✓               |
-| IE11          | ✓&sup3;         |
-| IE10          | ✓<sup>2,3</sup> |
-| Mobile Safari | ✓&sup1;         |
+| IE11          | ✓               |
+| IE10          | ✓               |
+| Mobile Safari | ✓               |
 | Opera         | ✓               |
 | Safari        | ✓               |
 

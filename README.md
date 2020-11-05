@@ -102,4 +102,4 @@ WassPlayer is developed by (https://www.webappssoft.com/).
 
 # Copyright and License
 
-[The MIT license](LICENSE.md)
+[The MIT license](LICENSE.md)# WassPlayer
